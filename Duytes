@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi Khánh Duy</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Taxi Khánh Duy</h1>
+  <div class="form-container">
+    <label for="pickup-location">Điểm đón:</label>
+    <input type="text" id="pickup-location" placeholder="Nhập địa chỉ điểm đón">
+    
+    <label for="dropoff-location">Điểm đến:</label>
+    <input type="text" id="dropoff-location" placeholder="Nhập địa chỉ điểm đến">
+    
+    <button onclick="calculateFare()">Tính giá</button>
+
+    <p id="fare-result"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+2. CSS (styles.css):
+
+/* CSS */
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #4CAF50;
+}
+
+.form-container {
+  margin: 20px;
+}
+
+.form-container input {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.form-container button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #45a049;
+}
+
+3. JavaScript (script.js):
+
+// JavaScript
+function calculateFare() {
+  var pickupLocation = document.getElementById('pickup-location').value;
+  var dropoffLocation = document.getElementById('dropoff-location').value;
+  if (pickupLocation && dropoffLocation) {
+    document.getElementById('fare-result').innerHTML = "Giá cước dự tính từ " + pickupLocation + " đến " + dropoffLocation + " là 100,000 VND";
+  } else {
+    document.getElementById('fare-result').innerHTML = "Vui lòng nhập đầy đủ thông tin!";
+  }
+}
